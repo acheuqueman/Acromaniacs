@@ -1,0 +1,91 @@
+Hecho: Eliminar tab3
+Por hacer: TODO filtar alumnos por clases
+
+
+- Cambiar "Crear alumno" por "Agregar"
+
+*? Iniciar en Tab3 (menu), cargar alumnos cuando inicia menu
+
+*+-? agregar un menu principal (con tab en el medio) con 3 cosos (Crear comprobante, ver alumno, crear alumno)
+
+* Arreglar como se actualizan los datos, teniendo en cuenta que varios usuarios lo van a usar
+
+* Vista Alumnos:
+
+    - **** muestre todos alumnos, filtros que muestre los alumnos que van tal dia
+
+    -? Al crear alumno, que se cierre la pestaña o se eliminen los datos para ingresar uno nuevo
+
+    - **** Agregar buscador
+
+* Formulario Comprobantes:
+    
+    
+
+    - Mes a abonar predefinido sea el ultimo sin pagar, al mostrar la lista muestre en diferentes
+      colores meses pagados y los no pagados
+
+    - Agregar ion select con forma de pago, transferencia, tarjeta, efectivo (No en comprobante)
+
+    - Cambiar opacidad de nombre disable a 1, o sacar input
+
+    - Actualizar cuando se abre vista de alumnos
+
+    - ** Si otro celular carga alumno, no se le actualiza al resto, arreglar, tratar ver como hacer que  
+    se actualizen los alumnos cada vez que se abre el modal y esperen al subscribe
+
+    
+
+
+-? Cambiar campo string "MesAbonado" a int de meses
+
+
+
+
+
+* Terminados
+
+-------------- **** FIXMEhecho Se puede crear comprobantes del mismo mes
+----------------------- ***Vista de Alumnos, poder editarlos, eliminarlos, ----ver sus meses pagados
+--------------------------------- en ver recargo cambiar 0 por "No"
+--------------------------- BUG: Al mostrar alumnos aparece un cuadro vacio al ultimo (elemento demas mysql.arrayAlumnos ?)
+---------------------------------------- *** Arreglar buscador
+----------------------------------- Hacer funcional recargo, 
+------------------------ Actualizar comprobantes del alumno cuando se carga uno
+-------------------- Quitar id comprobante
+----------------------------- Recargar comprobantes cuando se ve alumnos, cuando se genera uno
+------------------------------------------ Probar conectar desde el celular
+---------- Terminar Alta de alumno
+    ---------------------------- Si se selecciona clase Lunes-Miercoles, desabilitar Martes-Jueves, idem al reves
+    ---------------------------- Formulario de alumno: Desabilitar horario, habilitar cuando se selecciona dia, poner horarios especificos de cada dia, agregar al formulario
+    ----------------------------- Enviar solo si hay datos en nombre y apellido
+    ----------------------------- Agregar boton volver atras o tab abajo
+    ---------------------------- Hacer alta de cursos del alumno
+
+- ----Insert en base desde altaDatos.php----
+
+- --------Evitar que se ingrese mas de 1 simbolo en input monto--------
+
+- -------------comprobar que datos esten bien----------------------
+
+------------------- Al hacer click que solo se inserte en base, salga cartel de que se inserto exitosamente, despues de opcion de generar pdf
+
+------------------------- Agregar busqueda de alumnos en formulario comprobante
+    -------------------------- Recibir alumnos de base (Arreglar)
+    ------------------------------ Que seleccione un alumno, y su nombre y apellido se agrege al comprobante, su id a la base
+
+---------------------------- Calcular Monto: * $600 1 vez x semana * $1.000 2 veces x semana * $1.300 3 veces x semana * $1.600 4 veces x semana
+
+---------------------------------------------------------- Seleccion de alumno
+
+----------------------------------------------------------------- Agregar clases a la base de datos y al input de creacion de alumnos
+
+Hecho: Al eliminar alumno se actualiza lista
+Haciendo:
+Por Hacer: Editar Alumno
+
+Hecho: Datos de alumno a editar se asignan a formulario de crear alumno
+Por Hacer: Si esta editando, que envie query de modificacion no de alta, vaciar objeto con alumno a editar despues
+
+Hecho: Alerta y redireccion de alumno editado
+Por hacer: Eliminar tab3, filtar alumnos por clases

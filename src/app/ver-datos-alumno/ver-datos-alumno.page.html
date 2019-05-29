@@ -1,0 +1,187 @@
+<ion-content padding>
+
+  <ion-item>
+      <ion-avatar>
+          <ion-icon name="person" item-start color="medium" size="large"></ion-icon>
+      </ion-avatar>
+      <ion-label text-wrap margin padding>{{alumno.nombre}} {{alumno.apellido}}</ion-label>
+      <ion-item-group>
+          <button ion-button full class="editAlumno" text-center  (click)="EditarAlumno()" routerLink="/tabs/tab2/crear-alumno" routerDirection="forward">
+            <ion-icon name="create" size="small" color="success"></ion-icon>    
+          </button>
+          <button ion-button full class="elimAlumno" text-center  (click)="EliminarAlumno()">
+            <ion-icon name="trash" item-start size="small" color="danger"></ion-icon>    
+          </button>
+      </ion-item-group>      
+  </ion-item>
+  
+  <h4>Clases del alumno:</h4>
+
+  <ion-grid class="grid">
+    <ion-row>
+        <ion-col>
+          <div class="not">
+              <h5 [hidden]="lunesHidden" class="not">Lunes:</h5>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="not">
+              <h5 [hidden]="lunesHidden" class="not">{{alumno.Clases.horarioLunes}}</h5>
+          </div>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+          <div>
+              <h5 [hidden]="martesHidden">Martes:</h5>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+              <h5 [hidden]="martesHidden">{{alumno.Clases.horarioMartes}}</h5>
+          </div>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+          <div>
+              <h5 [hidden]="miercolesHidden">Miércoles:</h5>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+              <h5 [hidden]="miercolesHidden">{{alumno.Clases.horarioMiercoles}}</h5>
+          </div>
+        </ion-col>
+    </ion-row>
+    <ion-row size="auto">
+        <ion-col>
+          <div>
+              <h5 [hidden]="juevesHidden">Jueves:</h5>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+              <h5 [hidden]="juevesHidden">{{alumno.Clases.horarioJueves}}</h5>
+          </div>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+          <div>
+              <h5 [hidden]="viernesHidden">Viernes:</h5>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+              <h5 [hidden]="viernesHidden">{{alumno.Clases.horarioViernes}}</h5>
+          </div>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+          <div>
+              <h5 [hidden]="sabadoHidden">Sábado:</h5>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+              <h5 [hidden]="sabadoHidden">{{alumno.Clases.horarioSabado}}</h5>
+          </div>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--<h2>Nombre: {{alumno.nombre}}</h2>  Nombre -->
+  <!--<h2>Apellido: {{alumno.apellido}}</h2>  Apellido 
+  <h1>Clases</h1>
+  <h3 [hidden]="lunesHidden">Lunes {{alumno.Clases.horarioLunes}}</h3>
+  <h3 [hidden]="martesHidden" >Martes {{alumno.Clases.horarioMartes}}</h3>
+  <h3 [hidden]="miercolesHidden" >Miercoles {{alumno.Clases.horarioMiercoles}}</h3>
+  <h3 [hidden]="juevesHidden" >Jueves {{alumno.Clases.horarioJueves}}</h3>
+  <h3 [hidden]="viernesHidden" >Viernes {{alumno.Clases.horarioViernes}}</h3>
+  <h3 [hidden]="sabadoHidden" > {{alumno.Clases.horarioSabado}}</h3>
+  -->
+
+  <ion-list>
+  <h4>Comprobantes</h4>
+    <ion-item *ngFor="let comp of arrayComprobantes">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              <h5>Mes Abonado: </h5>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <h6>{{comp.MesAbonado}} {{comp.AnioAbonado}}</h6>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+              <div>
+                <h5>Fecha del Pago: </h5>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+                <h6>{{comp.Fecha}}</h6>
+              </div>
+            </ion-col>
+          </ion-row>
+        <ion-row>
+            <ion-col>
+              <div>
+                <h5>Abono por Recargo: </h5>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+                <h6>{{comp.Recargo}}</h6>
+              </div>
+            </ion-col>
+          </ion-row>
+        <ion-row>
+            <ion-col>
+              <div>
+                <h5>Pago Total: </h5>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+                <h6>$ {{comp.Monto}}</h6>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col></ion-col>
+            <ion-col>
+                <button ion-button full class="generarPDF" text-center margin (click)="generarPDF(comp,alumno.idAlumno)">
+                    Generar PDF
+                  </button>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+      
+
+
+        <!--  <h4>ID comprobante: {{comp.IdComp}}  </h4>  
+        <h4>Mes Abonado: {{comp.MesAbonado}} {{comp.AnioAbonado}}    </h4>
+        <h4>Recargo: {{comp.Recargo}}   </h4>
+      </ion-item-group>
+      <ion-item-group>
+        <h4>Fecha: {{comp.Fecha}}   </h4>
+        <h4>Monto: {{comp.Monto}}   </h4>
+        <button ion-button full class="selectAlumno" text-center margin (click)="generarPDF(comp,alumno.idAlumno)">
+          Generar PDF
+        </button>
+      </ion-item-group>
+      --> 
+    </ion-item>
+  </ion-list>
+  
+
+
+</ion-content>

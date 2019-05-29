@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Alumnos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+    <!-- Selector para filtar los alumnos segun clase que asisten -->
+    Filtro:
+    <ion-select value="Todos" class="form_input" [(ngModel)]="filtroAlumnos" name="filtro" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Filtro" (ionChange)="FiltrarAlumnosClases()">
+      <ion-select-option value="Todos">Todos</ion-select-option>
+      <ion-select-option value="Lunes">Lunes</ion-select-option>
+      <ion-select-option value="Martes">Martes</ion-select-option>
+      <ion-select-option value="Miercoles">Miercoles</ion-select-option>
+      <ion-select-option value="Jueves">Jueves</ion-select-option>
+      <ion-select-option value="Viernes">Viernes</ion-select-option>
+      <ion-select-option value="Sabado">Sabado</ion-select-option>
+    </ion-select>
+
+    <!-- Alumnos a mostrar // AJUSTAR-->
+    <ion-label class="nombre_campo1">Alumnos:</ion-label>
+    <ion-list> 
+      <button *ngFor="let alumno of alumnos" ion-button block text-wrap  class="selectAlumno" text-center margin (click)="VerDatosAlumno(alumno)">
+        {{alumno.NombreApellido}}
+      </button>
+    </ion-list>
+
+</ion-card>
+<ion-fab>
+    <ion-fab-button routerLink="/tabs/tab2/crear-alumno" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

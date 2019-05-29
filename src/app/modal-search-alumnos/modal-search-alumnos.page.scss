@@ -1,0 +1,25 @@
+ion-searchbar{
+
+    width: 100%;
+    margin-top: 7px;;
+    border-radius: 0% !important;
+    --placeholder-font-weight: normal !important;
+    /*--placeholder-font-style: normal;
+    --placeholder-font-size: 2px;*/
+    --placeholder-font-style: normal !important;
+//    --icon-color: #3880ff;
+}
+.form_input_search{
+    font-size: 70%;
+}
+ion-card{
+    padding: 4%;
+}
+ion-item{
+    --border-style: none !important;
+
+}
+/*ion-popover-controller{
+    width: 30%;
+    height: 30% !important;
+}*/

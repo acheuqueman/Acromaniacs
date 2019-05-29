@@ -1,0 +1,33 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>Alumnos</ion-title>
+  </ion-toolbar>
+</ion-header>-->
+
+<ion-content>
+  <!-- Item con boton cancelar y searchbar class="input_Ion-item" -->
+  <ion-item >
+    <ion-searchbar placeholder="Alumno" (ionInput)="getAlumnos($event)"></ion-searchbar>
+    <button ion-button full (click)="dismissModal()" class="button1" text-center margin>X</button>
+  </ion-item>
+  <ion-card>
+      Filtro:      
+      <!-- Selector filtro segun clases -->
+        <ion-select value="Todos" class="form_input_search"  name="filtro" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Filtro" cancelText="Nah" okText="Okay!" (ionChange)="FiltrarAlumnosClases($event)">
+          <ion-select-option value="Todos">Todos</ion-select-option>
+          <ion-select-option value="Lunes">Lunes</ion-select-option>
+          <ion-select-option value="Martes">Martes</ion-select-option>
+          <ion-select-option value="Miercoles">Miercoles</ion-select-option>
+          <ion-select-option value="Jueves">Jueves</ion-select-option>
+          <ion-select-option value="Viernes">Viernes</ion-select-option>
+          <ion-select-option value="Sabado">Sabado</ion-select-option>
+        </ion-select>
+      <!-- List con botones de alumnos generados  -->
+      <ion-list>
+        <button  *ngFor="let alumno of alumnos" ion-button full block text-wrap (click)="setAlumno(alumno)" class="selectAlumno" text-center margin>
+            {{alumno.NombreApellido}}
+        </button>
+      </ion-list>
+  </ion-card>
+  
+</ion-content>
