@@ -1,5 +1,5 @@
 <ion-header>   
-  <ion-toolbar>
+  <ion-toolbar color="primary">
       <ion-buttons slot="start">
           <ion-back-button></ion-back-button>
         </ion-buttons>
@@ -11,7 +11,7 @@
   <ion-card padding>
     <!-- Item nombre del alumno 
     BORRAR HEADDER*************************
-  ACOMODAR RADIO************************************ -->
+-->
   <ion-item class="input_Ion-item">
       <ion-card-subtitle class="nombre_campo">Nombre: </ion-card-subtitle>
       <ion-input class="radios_input" type="text" [(ngModel)]="form.name"  maxlength="17"></ion-input> 
@@ -58,7 +58,7 @@
             <ion-col>
               <div>
                   <div class="listHorarios">
-                      <ion-select  [disabled]="horarioLunes.disabled" [(ngModel)]="form.horarioLunes" name="lunesHorario" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Eliga horario">
+                      <ion-select class="horario" [disabled]="horarioLunes.disabled" [(ngModel)]="form.horarioLunes" name="lunesHorario" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Eliga horario">
                         <ion-select-option class="popover" value="18:00">18:00</ion-select-option>
                         <ion-select-option class="popover" value="19:30">19:30</ion-select-option>
                         <ion-select-option class="popover" value="21:00">21:00</ion-select-option>
@@ -82,7 +82,7 @@
           <ion-col> <!-- Col Hora -->
             <div>
                 <div class="listHorarios">
-                    <ion-select [disabled]="horarioMartes.disabled" [(ngModel)]="form.horarioMartes" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Eliga horario">
+                    <ion-select class="horario" [disabled]="horarioMartes.disabled" [(ngModel)]="form.horarioMartes" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Eliga horario">
                       <ion-select-option value="17:30">17:30</ion-select-option>
                       <ion-select-option value="19:00">19:00</ion-select-option>
                       <ion-select-option value="20:30">20:30</ion-select-option>
@@ -106,7 +106,7 @@
         <ion-col>
           <div>
               <div class="listHorarios">
-                  <ion-select [disabled]="horarioMiercoles.disabled" [(ngModel)]="form.horarioMiercoles" name="miercolesHorario" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Eliga horario">
+                  <ion-select class="horario" [disabled]="horarioMiercoles.disabled" [(ngModel)]="form.horarioMiercoles" name="miercolesHorario" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Eliga horario">
                     <ion-select-option value="18:00">18:00</ion-select-option>
                     <ion-select-option value="19:30">19:30</ion-select-option>
                     <ion-select-option value="21:00">21:00</ion-select-option>
@@ -130,7 +130,7 @@
       <ion-col>
         <div>
             <div class="listHorarios">
-                <ion-select [disabled]="horarioJueves.disabled" [(ngModel)]="form.horarioJueves" name="juevesHorario" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Eliga horario">
+                <ion-select class="horario" [disabled]="horarioJueves.disabled" [(ngModel)]="form.horarioJueves" name="juevesHorario" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Eliga horario">
                   <ion-select-option value="17:30">17:30</ion-select-option>
                   <ion-select-option value="19:00">19:00</ion-select-option>
                   <ion-select-option value="20:30">20:30</ion-select-option>
@@ -154,7 +154,7 @@
     <ion-col> <!-- Col Hora -->
       <div>
           <div class="listHorarios">
-              <ion-select [disabled]="horarioViernes.disabled" [(ngModel)]="form.horarioViernes" name="viernesHorario" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Eliga horario">
+              <ion-select class="horario" [disabled]="horarioViernes.disabled" [(ngModel)]="form.horarioViernes" name="viernesHorario" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Eliga horario">
                 <ion-select-option value="18:00">18:00</ion-select-option>
                 <ion-select-option value="19:30">19:30</ion-select-option>
                 <ion-select-option value="21:00">21:00</ion-select-option>
@@ -178,7 +178,7 @@
     <ion-col> <!-- Col Hora -->
       <div>
           <div class="listHorarios">
-              <ion-select [disabled]="horarioSabado.disabled" [(ngModel)]="form.horarioSabado" name="sabadoHorario" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Eliga horario">
+              <ion-select class="horario" [disabled]="horarioSabado.disabled" [(ngModel)]="form.horarioSabado" name="sabadoHorario" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Eliga horario">
                 <ion-select-option value="18:00">18:00</ion-select-option>
                 <ion-select-option value="19:30">19:30</ion-select-option>
                 <ion-select-option value="21:00">21:00</ion-select-option>

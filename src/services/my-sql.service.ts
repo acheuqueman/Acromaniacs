@@ -18,7 +18,7 @@ import { forkJoin } from 'rxjs';
 
 })
 export class MySQLService {
-  ipCarpeta : string = "http://localhost/acromaniacs/"; //Direccion local
+  ipCarpeta : string = "https://acromaniacs.000webhostapp.com/acromaniacs/"; //Direccion local
   //ipCarpeta : string = "http://192.168.0.7/acromaniacs/"; //WIFI local
   datosAlta;
   alertService : any;

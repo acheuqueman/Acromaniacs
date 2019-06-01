@@ -1,7 +1,7 @@
 .editAlumno{
 
     top: 0% !important;
-    color: #3881ffb9;
+    color: #17BDFA ;
     margin: 6% ;
     margin-bottom: 15px;
     right: 0%;
@@ -9,8 +9,6 @@
     background: none;
     display: block;
 //    border-radius: 10px !important;
-
-
 }
 .elimAlumno{
     top: 3% !important;
@@ -23,6 +21,17 @@
     display: block;
 
 
+}
+.cardComp{
+    background: #17BDFA;
+    color: #fff;
+
+}
+
+.cardClases{
+    background: #94D8FC ;
+    color: #fff;
+    margin-bottom: 5%;
 }
 
 h4{
@@ -51,8 +60,8 @@ ion-label{
 }
 
 .generarPDF{
-    color: #fff !important;
-    background-color: #3880ff ; //3880ff fa0a66
+    background-color: #fff; //3880ff fa0a66
+    color: #17BDFA;
     padding: 10px;
     width: 90%;
     border-radius: 45px;

@@ -15,11 +15,14 @@
       </ion-item-group>      
   </ion-item>
   
-  <h4>Clases del alumno:</h4>
+  <ion-card class="cardClases" padding> 
+  <h4>Clases del alumno:</h4> 
 
-  <ion-grid class="grid">
-    <ion-row>
-        <ion-col>
+<div *ngIf="hidden!='$0'">
+
+  <ion-grid class="grid" >
+    <ion-row class="not" no-margin> 
+        <ion-col class="not">
           <div class="not">
               <h5 [hidden]="lunesHidden" class="not">Lunes:</h5>
           </div>
@@ -30,7 +33,7 @@
           </div>
         </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row no-margin>
         <ion-col>
           <div>
               <h5 [hidden]="martesHidden">Martes:</h5>
@@ -91,6 +94,8 @@
         </ion-col>
     </ion-row>
   </ion-grid>
+</div>
+</ion-card>
 
   <!--<h2>Nombre: {{alumno.nombre}}</h2>  Nombre -->
   <!--<h2>Apellido: {{alumno.apellido}}</h2>  Apellido 
@@ -102,6 +107,7 @@
   <h3 [hidden]="viernesHidden" >Viernes {{alumno.Clases.horarioViernes}}</h3>
   <h3 [hidden]="sabadoHidden" > {{alumno.Clases.horarioSabado}}</h3>
   -->
+<ion-card class="cardComp">
 
   <ion-list>
   <h4>Comprobantes</h4>
@@ -182,6 +188,7 @@
     </ion-item>
   </ion-list>
   
+</ion-card>
 
 
 </ion-content>
