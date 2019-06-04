@@ -1,18 +1,16 @@
-Hecho: Eliminar tab3
-Por hacer: TODO filtar alumnos por clases
+Hecho: filtar alumnos por clases
+Por hacer: 
 
 
-- Cambiar "Crear alumno" por "Agregar"
+** Bloquear fecha (o arreglar en pdf)
 
-*? Iniciar en Tab3 (menu), cargar alumnos cuando inicia menu
+* 
 
-*+-? agregar un menu principal (con tab en el medio) con 3 cosos (Crear comprobante, ver alumno, crear alumno)
+****** Boton de actualizar alumnos (Al iniciar app y abrir lista alumnos muy rapido no llegan a bajar del server?)
 
 * Arreglar como se actualizan los datos, teniendo en cuenta que varios usuarios lo van a usar
 
 * Vista Alumnos:
-
-    - **** muestre todos alumnos, filtros que muestre los alumnos que van tal dia
 
     -? Al crear alumno, que se cierre la pestaña o se eliminen los datos para ingresar uno nuevo
 
@@ -20,8 +18,6 @@ Por hacer: TODO filtar alumnos por clases
 
 * Formulario Comprobantes:
     
-    
-
     - Mes a abonar predefinido sea el ultimo sin pagar, al mostrar la lista muestre en diferentes
       colores meses pagados y los no pagados
 
@@ -45,6 +41,8 @@ Por hacer: TODO filtar alumnos por clases
 
 * Terminados
 
+------------------------------- **** muestre todos alumnos, filtros que muestre los alumnos que van tal dia
+------------------------------- Cambiar "Crear alumno" por "Agregar"
 -------------- **** FIXMEhecho Se puede crear comprobantes del mismo mes
 ----------------------- ***Vista de Alumnos, poder editarlos, eliminarlos, ----ver sus meses pagados
 --------------------------------- en ver recargo cambiar 0 por "No"
