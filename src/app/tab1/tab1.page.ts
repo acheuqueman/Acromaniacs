@@ -42,11 +42,12 @@ export class Tab1Page {
   constructor(private plt: Platform,  private MySql: MySQLService, private changeDet: ChangeDetectorRef, private alertController: AlertController, private alertService: AlertService, private modalController: ModalController) {
     this.GetDate();
     this.form.recargo = "No";
-    this.MySql.GetAlumnos();
+    this.MySql.GetAlumnos("login");
     this.valorRecargo = 100;
   }
-  ionViewDidLoad() {
+  ionViewWillEnter(){
     //TODO: Cambiar color de meses abonado o no abonados de cada alumno
+    //this.MySql.GetAlumnos();
   }
 
   //Obtiene fecha de hoy y lo pone como predeterminado

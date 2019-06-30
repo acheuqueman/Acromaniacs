@@ -1,12 +1,13 @@
 Hecho: filtar alumnos por clases
 Por hacer: 
 
+TODO Arreglar errores FIXME 
 
-** Bloquear fecha (o arreglar en pdf)
+TODO ...
+
+* Bloquear fecha (o arreglar en pdf)
 
 * Bloquear screen rotation
-
-****** Boton de actualizar alumnos (Al iniciar app y abrir lista alumnos muy rapido no llegan a bajar del server?)
 
 * Arreglar como se actualizan los datos, teniendo en cuenta que varios usuarios lo van a usar
 
@@ -25,7 +26,7 @@ Por hacer:
 
     - Cambiar opacidad de nombre disable a 1, o sacar input
 
-    - Actualizar cuando se abre vista de alumnos
+    - *** Actualizar cuando se abre vista de alumnos
 
     - ** Si otro celular carga alumno, no se le actualiza al resto, arreglar, tratar ver como hacer que  
     se actualizen los alumnos cada vez que se abre el modal y esperen al subscribe
@@ -41,6 +42,7 @@ Por hacer:
 
 * Terminados
 
+---------------------****** Boton de actualizar alumnos (Al iniciar app y abrir lista alumnos muy rapido no llegan a bajar del server?)
 ------------------------------- **** muestre todos alumnos, filtros que muestre los alumnos que van tal dia
 ------------------------------- Cambiar "Crear alumno" por "Agregar"
 -------------- **** FIXMEhecho Se puede crear comprobantes del mismo mes

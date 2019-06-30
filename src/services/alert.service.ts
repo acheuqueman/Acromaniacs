@@ -167,10 +167,17 @@ export class AlertService {
     this.mySQL.BoolEliminarAlumno();
   }
 
-  async present() {
+  //NOTE ciculo de cargando del crear alumno
+  async present(var1) {
+    var msg = "";
+    // Si es la primera vez que inicia la app, pone un mensaje
+    if (var1 == "login"){
+      msg = "Cargando Alumnos...";
+    }
     this.isLoading = true; //Asigna bool de que empezo a cargar
     return await this.loadingCtrl.create({ //(con await) crea loading
-      duration: 5000,
+      message: msg,
+      duration: 50000,
     }).then(a => {
       a.present().then(() => { //Lo presenta, generalmente tarda
         //console.log('presented');

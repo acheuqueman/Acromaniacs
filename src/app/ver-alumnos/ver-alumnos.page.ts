@@ -25,6 +25,7 @@ export class VerAlumnosPage implements OnInit {
 
     // We subscribe to the observable to be notified when
       // the data is ready
+      // NOTE Observable de general-service UpdateDeletedAlumnos()
       this.generalService.observable.subscribe(() => {
         //Hace cosas
         console.log("Recibio Observable");
@@ -32,9 +33,10 @@ export class VerAlumnosPage implements OnInit {
       });
   }
 
-  //Se carga cuando entra la vista
+  // NOTE Se carga cuando entra la vista
   ionViewWillEnter(){
-    console.log("Entro vista");
+    //console.log("Entro vista");
+    //this.MySql.GetAlumnos();
     this.IniciarAlumnos();
     this.FiltrarAlumnosClases()
   }

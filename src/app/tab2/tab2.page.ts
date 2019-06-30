@@ -22,6 +22,9 @@ export class Tab2Page {
     private router: Router){ 
 
   }
+  ionViewWillEnter(){
+    //this.MySql.GetAlumnos();
+  }
 
   CrearAlumno(){
     this.router.navigate(['/crear-alumno']); 

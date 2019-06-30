@@ -29,7 +29,7 @@ export class AlertToMysqlServiceService {
             
             //console.log(this.mySQL)
             this.mySQL.EliminarAlumnoService(idAlumno); 
-            this.generalService.UpdateDeletedAlumnos();
+            //this.generalService.UpdateDeletedAlumnos();
           }
         }
       ] 

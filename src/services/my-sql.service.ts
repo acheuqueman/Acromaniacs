@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
 import {AlertService} from './alert.service';
+import {GeneralServiceService} from './general-service.service';
 //import {ModalSearchAlumnosPage} from '../app/modal-search-alumnos/modal-search-alumnos.page';
 
 import { Observable, of, throwError } from 'rxjs';
@@ -27,7 +28,7 @@ export class MySQLService {
   modal;
   boolEliminarAlumno = false;
 
-  constructor(public http: HttpClient, public injector: Injector) { 
+  constructor(public http: HttpClient, public injector: Injector, private generalService: GeneralServiceService) { 
     this.alertService = injector.get(AlertService);
 
     this.AlumnosArray = [];
@@ -65,7 +66,8 @@ export class MySQLService {
       //console.log("Subscribe Post");
       this.alertService.dismiss();
       this.alertService.AltaExitosa(IdAlumno, Fecha, MesAbonado, Recargo, Monto,NombreApellido);
-      this.GetAlumnos(); //Actualiza alumnos
+      // FIXME Pide argumentos, arreglar
+      this.GetAlumnos("false"); //Actualiza alumnos
       
     },
     (error : any) =>
@@ -85,14 +87,14 @@ export class MySQLService {
     .subscribe((data : any) =>
     {
       //console.log("Subscribe Post");
-      this.GetAlumnos();
+      this.GetAlumnos("false");
       this.alertService.dismiss();
       this.alertService.AltaAlumnoExitosa();
     },
     (error : any) =>
     {
       //console.log("Error POST");
-      this.GetAlumnos();
+      this.GetAlumnos("false");
       console.log(error);
       this.alertService.dismiss();
       this.alertService.AltaAlumnoError();
@@ -110,14 +112,14 @@ export class MySQLService {
     .subscribe((data : any) =>
     {
       //console.log("Subscribe Post");
-      this.GetAlumnos();
+      this.GetAlumnos("false");
       this.alertService.dismiss();
       this.alertService.EditarAlumno(true);
     },
     (error : any) =>
     {
       //console.log("Error POST");
-      this.GetAlumnos();
+      this.GetAlumnos("false");
       console.log(error);
       this.alertService.dismiss();
       this.alertService.EditarAlumno(false);
@@ -136,42 +138,23 @@ export class MySQLService {
         })
   */
   
-  GetAlumnos(){
+  // NOTE Actualiza la lista de alumnos
+  GetAlumnos(var1){
     this.AlumnosReceibed = false;
     var ipAltaDatos = this.ipCarpeta + "getAlumnos.php";
     this.AlumnosArray = [];
+    if (var1 == "login") this.alertService.present(var1); // Muestra coso cargando
     this.http.get(ipAltaDatos)
     .subscribe((data : any) =>
     {
-      //console.log("Subscribe Post");
       var AlumnosObtenidos = data;
-
-      //var lenght = AlumnosObtenidos['lenght'];
-      //console.log(lenght);
-      //Agregar comprobantes
       this.AlumnosArray = AlumnosObtenidos;
-      //console.log(AlumnosObtenidos)
-
-      /*
-      for(let i=0;i<lenght;i++){
-        this.AlumnosArray.push({
-          nombre: AlumnosObtenidos[i]['nombre'],
-          apellido: AlumnosObtenidos[i]['apellido'],
-          idAlumno: AlumnosObtenidos[i]['idAlumno'],
-          IdClaseAlumno : AlumnosObtenidos[i]['IdClaseAlumno'],
-          horarioLunes: AlumnosObtenidos[i]["horarioLunes"],
-          horarioMartes: AlumnosObtenidos[i]["horarioMartes"],
-          horarioMiercoles: AlumnosObtenidos[i]["horarioMiercoles"],
-          horarioJueves: AlumnosObtenidos[i]["horarioJueves"],
-          horarioViernes: AlumnosObtenidos[i]["horarioViernes"],
-          horarioSabado: AlumnosObtenidos[i]["horarioSabado"],
-        });
-      }
-      */
-      
       //this.modal.startModal();
       this.AlumnosArray = this.objectToArray(this.AlumnosArray)
-      console.log(this.AlumnosArray);
+      console.log("Alumnos: "+this.AlumnosArray);
+      this.alertService.dismiss();
+      // FIXME da error si no se esta eliminando un alumno y se usa el get, arreglar
+      this.generalService.UpdateDeletedAlumnos();
       
     },
     (error : any) =>
@@ -204,15 +187,17 @@ export class MySQLService {
     this.http.post<string>(ipEliminarAlumno,idAlumno)
     .subscribe((data : any) =>
     {
-      //console.log("Subscribe Post");
-      this.GetAlumnos(); //Actualiza alumnos
+      console.log("Alumno Eliminado");
+      this.GetAlumnos("false"); //Actualiza alumnos
+      //this.generalService.UpdateDeletedAlumnos();
       //this.alertService.dismiss();
       //this.alertService.AltaAlumnoExitosa();
     },
     (error : any) =>
     {
       //console.log("Error POST");
-      this.GetAlumnos();
+      this.GetAlumnos("false");
+      
       //console.log(error);
       //this.alertService.dismiss();
       //this.alertService.AltaAlumnoError();
